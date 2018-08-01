@@ -1,0 +1,111 @@
+
+<form [formGroup]="profileForm">
+  <h2>Login Form</h2>
+
+  <div class="form-group">
+    <label>
+     First Name:<br/> <br/>
+      <input id="fname" type="text" formControlName="fname" placeholder="first name">
+      <div *ngIf="profileForm.controls['fname'].touched && !profileForm.controls['fname'].valid">invalid first name</div>
+     
+    </label>
+    </div>
+
+
+
+    <div class="form-group">
+      <label>
+       Last Name:<br/> <br/>
+        <input type="text" formControlName="lname" placeholder="last name">
+        <span *ngIf="profileForm.controls['lname'].touched && !profileForm.controls['lname'].valid">invalid last name</span><br/><br/>
+      </label>
+      </div>
+      <div class="form-group">
+        <label>
+         EmpId:<br/> <br/>
+          <input type="text" formControlName="emp" placeholder="employee id">
+          <span *ngIf="profileForm.controls['emp'].touched && !profileForm.controls['emp'].valid">invalid employee id</span><br/><br/>
+        </label>
+        </div>
+  <div class="form-group">
+    <label>
+     Email:<br/> <br/>
+      <input type="text" formControlName="email" placeholder="example@abc.com"><br/><br/>
+      <span *ngIf="profileForm.controls['email'].touched && !profileForm.controls['email'].valid">invalid Email</span>
+    </label>
+    </div>
+    <div class="form-group">
+      <label>
+       Contact No.:<br/> <br/>
+        <input type="text" formControlName="con" placeholder="contact no."><br/><br/>
+        <span *ngIf="profileForm.controls['con'].touched && !profileForm.controls['con'].valid">invalid contact no.</span>
+      </label>
+      </div>
+      <div class="form-group">
+        <label>
+         Password:<br/> <br/>
+          
+          <input type="{{type}}" formControlName="pass" placeholder="password">
+          <span (click)="showHide()"class="glyphicon glyphicon-eye-open"></span>
+          <span *ngIf="profileForm.controls['pass'].touched && !profileForm.controls['pass'].valid">invalid password</span>
+        </label>
+        </div>
+        <div class="form-group">
+          <label>
+           Confirm Password:<br/> <br/>
+            <input type="password" formControlName="cpass" placeholder="confirm password" (keyup)="validate()"><br/><br/>
+            
+            <span *ngIf="profileForm.controls['cpass'].touched && !profileForm.controls['cpass'].valid">invalid password</span>
+          </label>
+          </div>
+          <div class="form-group">
+            <label>
+             Gender:<br/> <br/>
+              <input type="text" formControlName="gen" placeholder="gender"><br/><br/>
+              <span *ngIf="profileForm.controls['gen'].touched && !profileForm.controls['gen'].valid">invalid gender</span>
+            </label>
+            </div>
+   <!-- <label>
+      First Name:
+       <input type="text" formControlName="fname" placeholder="firstname">
+       <span *ngIf="!profileForm.controls['fname'].valid">*</span>
+     </label><br/><br/><br/><br/>
+     <label>
+      Last Name:
+       <input type="text"  formControlName="lname" placeholder="lastname">
+       <span *ngIf="!profileForm.controls['lname'].valid">*</span>
+     </label><br/><br/><br/><br/>
+     <label>
+         EmployeeId:
+         <input type="text"  formControlName="emp" placeholder="empid">
+         <span *ngIf="!profileForm.controls['emp'].valid">*</span>
+       </label><br/><br/><br/><br/>
+      <!--<label>
+       Email:
+        <input type="email" formControlName="email" placeholder="email">
+        <span *ngIf="!profileForm.controls['email'].valid">*</span>
+      </label><br/><br/><br/><br/>
+    <label>
+  Contact No.:
+    <input  type="text" formControlName="con" placeholder="contact no.">
+    <span *ngIf="!profileForm.controls['con'].valid">*</span>
+  </label><br/><br/><br/>
+  <label>
+  Password:
+   <input type="password"  formControlName="pass" placeholder="password" >
+   <span *ngIf="!profileForm.controls['pass'].valid">*</span>
+ </label><br/><br/><br/><br/>
+ <label>
+  Confirm Password:
+   <input type="password"  formControlName="cpass" placeholder="confirm password" (keyup)="check()">
+   <span *ngIf="!profileForm.controls['cpass'].valid">*</span> 
+ </label><br/><br/><br/><br/>
+ <label>
+  Gender:
+   <input type="text"  formControlName="gen" placeholder="gender">
+   <span *ngIf="!profileForm.controls['gen'].valid">*</span>
+ </label><br/><br/><br/><br/>-->
+
+ <button type="submit" [disabled]="!profileForm.valid" (click)="storeData()" >Submit</button>
+
+</form>
