@@ -14,12 +14,16 @@ import { UserService } from './user.service';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ReactiveformComponent,
     DataComponent,
-    EditdetailsComponent
+    EditdetailsComponent,
+
+    
   ],
   imports: [
     BrowserModule,
